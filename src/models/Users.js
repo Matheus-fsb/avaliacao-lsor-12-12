@@ -15,6 +15,8 @@ const Users = sequelize.define('Users', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+}, {
+  timestamps: false,  // Desativa os campos createdAt e updatedAt
 });
 
 module.exports = Users;

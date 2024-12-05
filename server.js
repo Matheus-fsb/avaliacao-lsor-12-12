@@ -5,11 +5,12 @@ require('dotenv').config();
 
 const PORT = process.env.PORT;
 
-const Users = require('./src/models/Users')
 
+// Função principal assíncrona
 (async () => {
   try {
-    await Users.sync({ force: true });
+    const Users = require('./src/models/Users');
+    await Users.sync({ force: false });
 
     console.log('Database sincronizado com sucesso.');
 
@@ -21,4 +22,3 @@ const Users = require('./src/models/Users')
     console.log('Erro ao sincronizar o banco de dados:', error);
   }
 })();
-
